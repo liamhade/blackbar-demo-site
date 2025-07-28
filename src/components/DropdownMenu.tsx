@@ -7,7 +7,7 @@ import Menu from '@mui/material/Menu';
 import { useNavigate } from 'react-router-dom';
 
 const options = [
-  'Dashboard',
+  'Circuit Details',
   'Order Summary',
 ];
 
@@ -58,7 +58,7 @@ export default function DropdownMenu({defaultIndex} : {defaultIndex : number}) {
 		  }}
         >
           <ListItemText
-            primary={options[selectedIndex]}
+            primary={"Menu"}
           />
         </ListItemButton>
       </List>
