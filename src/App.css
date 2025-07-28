@@ -1,0 +1,41 @@
+.page-header {
+  color: red;
+  display: flexbox;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.thin-table {
+  border: 2px solid rgb(107, 107, 107);  
+  text-align: center;
+  border-spacing: 2px;
+
+  .thin-table-header {
+    font-size: 15px;
+  }
+
+  .thin-table-body {
+    background-color: rgb(152, 193, 206);
+  }
+
+}
+
+.hyperlinks {
+  font-size: 15px;
+}
+
+.buttonTriplets {
+  padding: 4px;
+  display: flex;
+  gap: 5px;
+
+  .middleButton {
+    padding: 5px;
+    box-shadow: 2px 2px 2px;
+  }
+  .rightButton {
+    padding: 5px;
+    box-shadow: 2px 2px 2px;
+  }
+}
