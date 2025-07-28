@@ -1,3 +1,5 @@
+/* Dashboard */
+
 .page-header {
   color: red;
   display: flexbox;
@@ -16,13 +18,18 @@
   }
 
   .thin-table-body {
-    background-color: rgb(152, 193, 206);
+    background-color: rgb(215, 240, 248);
   }
 
 }
 
 .hyperlinks {
   font-size: 15px;
+}
+
+.large-table {
+  border: 2px solid rgb(159, 159, 159);  
+  padding-right: 8%;
 }
 
 .buttonTriplets {
@@ -46,4 +53,32 @@
   padding: 5px;
   gap: 5px;
   flex-direction: column;
+}
+
+/* OrderSummary */
+
+.order-summary {
+  padding: 10px;
+
+  .refresh-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 100px;
+  }
+
+  .order-summary-table {
+    width: 100vw;
+    font-size: 15px;
+
+    td {
+      padding-top: 20px;
+    }
+  }
+}
+
+/* Dropdown Menu */
+
+.main-dropdown-menu {
+  width: 10vw;
+  margin-left: 10px;
 }

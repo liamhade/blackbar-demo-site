@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import '../App.css';
+import DropdownMenu from "../components/DropdownMenu";
 
 const DATA : Record<string, string[]> = {
   "Action" : [""],
@@ -85,7 +87,7 @@ function ThinTable() {
 		<tbody className="thin-table-body">
 			<tr>
 			  {Object.keys(DATA).map((key, index) =>  (
-				<td>{DATA[key][0]}</td>
+				<td dangerouslySetInnerHTML={{ __html: DATA[key][0] }} />
 			  ))}
 			</tr>
 		</tbody>
@@ -152,10 +154,9 @@ function chunkList<T>(list: T[], n: number): T[][] {
 
 function LargeTable() {
   var cols = 5;
-
   return (
 	<div>
-	  <table>
+	  <table className="large-table">
 		<tbody>
 		  {chunkList(Object.keys(DATA), cols).map((chunk) => (
 			<tr>
@@ -174,17 +175,20 @@ function LargeTable() {
 }
 
 function SuffixButtons() {
-  return (
-	<div className="suffix-buttons">
-	  <button>Save</button>
-	  <button>Create Remarks</button>
-	</div>
-  )
+	const navigate = useNavigate();
+
+	return (
+		<div className="suffix-buttons">
+			<button>Save</button>
+			<button>Create Remarks</button>
+		</div>
+	)
 }
 
 export default function DashboardPage() {
   return (
 	<div className="dashboard-page">
+	<DropdownMenu defaultIndex={0} />
 	<Header />
 	<ThinTable />
 	<HyperLinks/>
