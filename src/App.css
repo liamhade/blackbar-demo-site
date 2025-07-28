@@ -1,3 +1,15 @@
+/* Login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 60vh;
+
+  .login-form {
+    border: 2px solid rgb(172, 172, 172); 
+  }
+}
+
 /* Dashboard */
 
 .page-header {
