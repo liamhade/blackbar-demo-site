@@ -16,25 +16,25 @@ function Header() {
 
 function ThinTable() {
   return (
-	<div>
-	  <table className="thin-table">
-		<thead className="thin-table-header">
-		  <tr>
-			{Object.keys(thinTableData).map((name, index) => (
-				<th style={{ textAlign: "center" }} key={index + "-thin-table-key"} className="column-name">
-					{name}
-				</th>
-			))}
-		  </tr>
-		</thead>
-		<tbody className="thin-table-body">
-			<tr>
-			  {Object.keys(thinTableData).map((key, index) =>  (
-				<td key={index + "-thin-table-value"} dangerouslySetInnerHTML={{ __html: thinTableData[key] }} />
-			  ))}
-			</tr>
-		</tbody>
-	  </table>
+	<div className="scrollable-table-container">
+		<table className="thin-table">
+			<thead className="thin-table-header">
+				<tr>
+				{Object.keys(thinTableData).map((name, index) => (
+					<th style={{ textAlign: "center" }} key={index + "-thin-table-key"} className="column-name">
+						{name}
+					</th>
+				))}
+				</tr>
+			</thead>
+			<tbody className="thin-table-body">
+				<tr>
+					{Object.keys(thinTableData).map((key, index) =>  (
+						<td key={index + "-thin-table-value"} dangerouslySetInnerHTML={{ __html: thinTableData[key] }} />
+					))}
+				</tr>
+			</tbody>
+		</table>
 	</div>
   )
 }

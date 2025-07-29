@@ -25,10 +25,10 @@ body {
 
 .dashboard-body-wrapper {
   padding: 3px;
-  border: 1px solid rgb(160, 159, 159); 
+  /* border: 1px solid rgb(160, 159, 159);  */
   margin-bottom: 6px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   width: 100%;
 }
 
@@ -68,7 +68,8 @@ body {
 
 .large-table {
   border: 2px solid rgb(159, 159, 159); 
-  width: 100%; 
+  width: 80%;
+  font-size: 15px; 
   padding-right: 2%;
 
   .key-cell {
