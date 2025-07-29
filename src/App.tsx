@@ -12,13 +12,11 @@ function App() {
     <Router>
       <Routes>
         {/* Multiple routes to the login page. */}
-        {/* <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} /> */}
-        {/* <Route path="/" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} /> */}
+        <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
 
-        <Route path="/dashboard" element={<PagePad child={<DashboardPage />} />} />
-        <Route path="/dashboard/order-summary" element={<PagePad child={<OrderSummary />} /> } />
-        {/* <Route path="/dashboard" element={isLoggedIn ? <PagePad child={<DashboardPage />} /> : <LoginPage setIsLoggedIn={setIsLoggedIn} />} /> */}
-        {/* <Route path="/dashboard/order-summary" element={isLoggedIn ? <PagePad child={<OrderSummary />} /> : <LoginPage setIsLoggedIn={setIsLoggedIn} />} /> */}
+        <Route path="/dashboard" element={isLoggedIn ? <PagePad child={<DashboardPage />} /> : <LoginPage setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/dashboard/order-summary" element={isLoggedIn ? <PagePad child={<OrderSummary />} /> : <LoginPage setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
     </Router>
   );
