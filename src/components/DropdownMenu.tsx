@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -7,13 +7,26 @@ import Menu from '@mui/material/Menu';
 import { useNavigate } from 'react-router-dom';
 
 const options = [
-  'Circuit Details',
-  'Order Summary',
+  'Circuit Details (React)',
+  'Order Summary (React)',
+
+  'Circuit Details - STATUS PENDING (HTML)',
+  'Circuit Details - STATUS IN EFFECT(HTML)',
+  'Order Summary (HTML)', // Order manager
+  'Network (HTML)',
+  'Circuit Tile (HTML)',
 ];
 
-export default function DropdownMenu({defaultIndex} : {defaultIndex : number}) {
+function StaticHTMLPage({ url } : {url : string}) {
+  useEffect(() => {
+    window.location.href = url;
+  }, [url]);
+  return <p>Redirecting to {url}...</p>;
+}
+
+export default function DropdownMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(defaultIndex);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
   const open = Boolean(anchorEl);
   const handleClickListItem = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -27,12 +40,36 @@ export default function DropdownMenu({defaultIndex} : {defaultIndex : number}) {
     setSelectedIndex(index);
     setAnchorEl(null);
 	
-	if (index === 0) {
-		navigate("/dashboard")
-		console.log("navigating to dashboard")
-	} else if (index === 1) {
-		navigate("/dashboard/order-summary")
-	}
+    switch (index) {
+
+      case 0:
+        navigate("/dashboard");
+        break;
+
+      case 1:
+        navigate("/dashboard/order-summary");
+        break;
+
+      case 2:
+        navigate("/html/circuit_details_in_effect");
+        break;
+
+      case 3:
+        navigate("/html/circuit_details_pending");
+        break;
+      
+      case 4:
+        navigate("/html/ordermanager");
+        break;
+
+      case 5:
+        navigate("/html/network");
+        break;
+
+      case 6:
+        navigate("/html/circuit_tile");
+        break;
+    } 
   };
 
   const handleClose = () => {

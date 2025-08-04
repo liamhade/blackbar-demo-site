@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
 import DropdownMenu from "../components/DropdownMenu";
 import orderSummaryData from "../data/orderSummaryData.json";
 import "../App.css"
@@ -51,17 +50,10 @@ function ShowData() {
 	)
 }
 
-function BackButton() {
-	const navigate = useNavigate();
-	return (
-		<button onClick={() => navigate("/dashboard")}>Back</button>
-	)
-}
-
 export default function OrderSummary() {
 	return (
 		<div>
-			<DropdownMenu defaultIndex={1}/>
+			<DropdownMenu />
 			<div className="order-summary">
 				<Header />
 				<RefreshButton />

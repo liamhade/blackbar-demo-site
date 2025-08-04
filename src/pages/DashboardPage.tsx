@@ -133,7 +133,7 @@ function SuffixButtons() {
 export default function DashboardPage() {
   return (
 	<div className="dashboard-page">
-		<DropdownMenu defaultIndex={0} />
+		<DropdownMenu />
 		<Header />
 		<div className="dashboard-body-wrapper">
 			<ThinTable />
