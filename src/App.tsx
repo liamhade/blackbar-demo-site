@@ -7,7 +7,7 @@ import DashboardPage from "./pages/DashboardPage";
 import OrderSummary from "./pages/OrderSummary"; 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   return (
     <Router>
