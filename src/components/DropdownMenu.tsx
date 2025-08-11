@@ -7,18 +7,20 @@ import Menu from '@mui/material/Menu';
 import { useNavigate } from 'react-router-dom';
 
 const options = [
-  'Circuit Details',
-  'Order Summary', // Order manager
-  'Network',
-  'Circuit Tile',
+  'Circuit Details (React)',
+  'Order Summary (React)',
+  // 'Circuit Details (HTML)',
+  'Order Summary (HTML)', // Order manager
+  'Network (HTML)',
+  'Circuit Tile (HTML)',
 ];
 
-function StaticHTMLPage({ url } : {url : string}) {
-  useEffect(() => {
-    window.location.href = url;
-  }, [url]);
-  return <p>Redirecting to {url}...</p>;
-}
+// function StaticHTMLPage({ url } : {url : string}) {
+//   useEffect(() => {
+//     window.location.href = url;
+//   }, [url]);
+//   return <p>Redirecting to {url}...</p>;
+// }
 
 export default function DropdownMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -39,18 +41,26 @@ export default function DropdownMenu() {
     switch (index) {
 
       case 0:
-        navigate("/html/circuit_details_in_effect");
+        navigate("/dashboard");
         break;
 
       case 1:
+        navigate("/dashboard/order-summary");
+        break;
+
+      // case 2:
+      //   navigate("/html/circuit_details_in_effect");
+      //   break;
+
+      case 2:
         navigate("/html/ordermanager");
         break;
 
-      case 2:
+      case 3:
         navigate("/html/network");
         break;
 
-      case 3:
+      case 4:
         navigate("/html/circuit_tile");
         break;
     } 

@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import PagePad from  "./components/PagePad";
 import HTMLWrapper from "./components/HTMLWrapper";
-// import DashboardPage from "./pages/DashboardPage";
-// import OrderSummary from "./pages/OrderSummary"; 
+import DashboardPage from "./pages/DashboardPage";
+import OrderSummary from "./pages/OrderSummary"; 
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -23,7 +23,7 @@ function App() {
           element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} 
         />
 
-        {/* <Route 
+        <Route 
           path="/dashboard" 
           element={
             isLoggedIn ? 
@@ -39,25 +39,25 @@ function App() {
               <PagePad child={<OrderSummary />} /> : 
               <LoginPage setIsLoggedIn={setIsLoggedIn} />
           } 
-        /> */}
+        />
         
-        <Route 
+        {/* <Route 
           path="/html/circuit_details_in_effect" 
           element={
             isLoggedIn ? 
               <PagePad child={<HTMLWrapper url="/html/circuit_details_in_effect.html" />} /> : 
               <LoginPage setIsLoggedIn={setIsLoggedIn} />
           } 
-        />
+        /> */}
         
-        <Route 
+        {/* <Route 
           path="/html/circuit_details_pending" 
           element={
             isLoggedIn ? 
               <PagePad child={<HTMLWrapper url="/html/circuit_details_pending.html" />} /> : 
               <LoginPage setIsLoggedIn={setIsLoggedIn} />
           } 
-        />
+        /> */}
         
         <Route 
           path="/html/ordermanager" 
