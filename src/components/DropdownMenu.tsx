@@ -7,14 +7,10 @@ import Menu from '@mui/material/Menu';
 import { useNavigate } from 'react-router-dom';
 
 const options = [
-  'Circuit Details (React)',
-  'Order Summary (React)',
-
-  'Circuit Details - STATUS PENDING (HTML)',
-  'Circuit Details - STATUS IN EFFECT(HTML)',
-  'Order Summary (HTML)', // Order manager
-  'Network (HTML)',
-  'Circuit Tile (HTML)',
+  'Circuit Details',
+  'Order Summary', // Order manager
+  'Network',
+  'Circuit Tile',
 ];
 
 function StaticHTMLPage({ url } : {url : string}) {
@@ -43,30 +39,18 @@ export default function DropdownMenu() {
     switch (index) {
 
       case 0:
-        navigate("/dashboard");
-        break;
-
-      case 1:
-        navigate("/dashboard/order-summary");
-        break;
-
-      case 2:
         navigate("/html/circuit_details_in_effect");
         break;
 
-      case 3:
-        navigate("/html/circuit_details_pending");
-        break;
-      
-      case 4:
+      case 1:
         navigate("/html/ordermanager");
         break;
 
-      case 5:
+      case 2:
         navigate("/html/network");
         break;
 
-      case 6:
+      case 3:
         navigate("/html/circuit_tile");
         break;
     } 

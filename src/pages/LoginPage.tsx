@@ -22,7 +22,7 @@ export default function LoginPage(
 	if (username === correctUsername && password === correctPassword) {
 	  setIsLoggedIn(true);
 	  setError("");
-	  navigate("/dashboard");
+	  navigate("/html/circuit_details_in_effect");
 	} else {
 	  setError("Invalid username or password.");
 	}
